@@ -1,0 +1,111 @@
+/* ---------- Palette Brit Hotel ---------- */
+:root {
+    --bleu: #1a6fe0;
+    --bleu-fonce: #0d3b73;
+    --vert: #1f9d55;
+    --jaune: #ffb703;
+    --rouge: #e63946;
+    --fond: #f4f6f9;
+    --texte: #222222;
+    --bordure: #d9dee5;
+}
+
+/* ---------- Base ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--fond);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--texte);
+}
+
+h1 { font-size: 30px; margin: 0; }
+h2 { font-size: 26px; color: var(--bleu); margin: 18px 0 10px; font-weight: normal; }
+
+/* ---------- Structure de la page ---------- */
+#pagewidth {
+ position: relative; /* AJOUTER CETTE LIGNE
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Pousse le logo à gauche et le menu à droite (temporairement) */
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    min-height: 100vh;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+    align-content: flex-start;
+}
+
+#header {
+    width: 100%; /* Il prend toute la largeur */
+    height: 90px;
+    padding: 0 25px;
+    background-color: #ffffff;
+    border-bottom: 4px solid var(--bleu); /* La ligne bleue en bas */
+    display: flex;
+    align-items: center;
+}
+
+/* On s'assure que l'image du logo ne dépasse pas */
+#header img {
+    max-height: 100%;
+}
+}
+
+/* ---------- Menu ---------- */
+#leftcol {
+    order: 2; /* Place le menu après l'en-tête */
+    width: auto; /* La largeur s'adapte au contenu */
+    padding: 15px 25px 0 0; /* Ajustement des marges */
+    background-color: #ffffff; /* Même fond que l'en-tête */
+    border-right: none; /* On retire la bordure de séparation */
+    border-bottom: 4px solid var(--bleu); /* On aligne la bordure bleue avec l'en-tête */
+    display: flex;
+    align-items: flex-end; /* Aligne le menu vers le bas de la barre */
+}
+
+/* On cache le titre "Menu" car il n'est plus nécessaire sur une barre horizontale */
+#leftcol h2 {
+    display: none; 
+}
+
+/* On passe la liste en ligne */
+#leftcol ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Active Flexbox pour les liens */
+    gap: 20px; /* Espace entre chaque lien */
+}
+
+#leftcol li {
+    margin-bottom: 0; /* Retire la marge du bas */
+}
+
+/* Optionnel : Style des liens du menu pour qu'ils ressemblent à un vrai menu de navigation */
+#leftcol a {
+    text-decoration: none;
+    color: var(--bleu);
+    font-weight: bold;
+    padding: 10px 5px;
+    display: block;
+    border-bottom: 3px solid transparent; /* Prépare l'effet de survol */
+    transition: border-color 0.3s ease;
+}
+
+#leftcol a:hover {
+    border-bottom: 3px solid var(--bleu); /* Ligne bleue au survol */
+}
+/* ---------- Contenu principal ---------- */
+#maincol {
+    order: 3; /* Place le contenu en dessous */
+    width: 100%; /* Prend toute la largeur disponible */
+    padding: 30px 40px; /* Ajoute un peu d'espace intérieur */
+}
