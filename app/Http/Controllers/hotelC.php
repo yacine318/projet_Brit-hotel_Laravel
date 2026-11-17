@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\Chambre;
 use App\Models\ChambreReservation;
@@ -36,7 +36,7 @@ class hotelC extends Controller
     {
         $client = new Client();
         $client->mail = $request->mail;
-        $client->motpasse = $request->password;
+    $client->motpasse = Hash::make($request->password);
         $client->nom = $request->nom;
         $client->save();
 

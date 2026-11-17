@@ -28,6 +28,19 @@
         <h2>Bienvenue chez Brit Hôtel</h2>
         <p>Découvrez nos <?php echo $nbHotels; ?> hôtels en Bourgogne et en Rhône-Alpes.</p>
 
+          <?php if (session('is_connected')): ?>
+            <p>Bonjour <strong><?php echo session('client_nom'); ?></strong>, bienvenue sur votre espace !</p>
+            <p>
+                <a href="<?php echo url('/reservation'); ?>">Réserver une chambre</a><br>
+                <a href="<?php echo url('/mesreservations'); ?>">Voir mes réservations</a>
+            </p>
+        <?php else: ?>
+            <p>Connectez-vous pour réserver une chambre.</p>
+            <p>
+                <a href="<?php echo url('/connexion'); ?>">Se connecter</a><br>
+                <a href="<?php echo url('/client'); ?>">Créer un compte</a>
+            </p>
+        <?php endif; ?>
         
 
         <h3>Nos hôtels à la une</h3>
